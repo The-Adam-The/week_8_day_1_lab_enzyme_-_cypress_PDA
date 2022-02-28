@@ -54,14 +54,19 @@ function App() {
         }
       }
 
+     
+
       // if the 'equals' button was clicked, clear the previous operator, otherwise
       // record what the previous operator was
       if (operator === "=") {
+
+
         setPreviousOperator(null);
       } else {
         setPreviousOperator(operator);
 
       }
+
       // replace the previous total with the current running total and flag that a
       // new total has been calculated
       setPreviousTotal(runningTotal);
@@ -81,9 +86,11 @@ function App() {
   }
 
   const divide = (number) => {
+    if (number===0) { setRunningTotal("world destroyed")
+  } else {
     setRunningTotal(parseFloat(previousTotal) / parseFloat(number));
   }
-
+  };
 
   return (
     <div className="container">
